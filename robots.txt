@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://prosales.github.io/sitemap-index.xml
