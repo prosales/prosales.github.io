@@ -1,0 +1,96 @@
+---
+import NodeJSIcon from "./icons/NodeJS.astro";
+import TailwindIcon from "./icons/Tailwind.astro";
+import LaravelIcon from "./icons/Laravel.astro";
+import ReactIcon from "./icons/React.astro";
+import VueIcon from "./icons/Vue.astro";
+import JavaScriptIcon from "./icons/JavaScript.astro";
+import BootstrapIcon from "./icons/Bootstrap.astro";
+import DockerIcon from "./icons/Docker.astro";
+import AWSIcon from "./icons/AWS.astro";
+import MySQLIcon from "./icons/MySQL.astro";
+
+enum TechnologyType {
+  Frontend = 1,
+  Backend = 2,
+  Database = 3,
+  Other = 4,
+}
+const TECHNOLOGIES = [
+  {
+    name: "Laravel",
+    icon: LaravelIcon,
+    colorClasses: "bg-gray-500 dark:bg-gray-500/30",
+    type: TechnologyType.Backend,
+  },
+  {
+    name: "NodeJS",
+    icon: NodeJSIcon,
+    colorClasses: "bg-gray-500 dark:bg-gray-500/30",
+    type: TechnologyType.Backend,
+  },
+  {
+    name: "MySQL",
+    icon: MySQLIcon,
+    colorClasses: "bg-gray-500 dark:bg-gray-500/30",
+    type: TechnologyType.Backend,
+  },
+  {
+    name: "React",
+    icon: ReactIcon,
+    colorClasses: "bg-gray-500 dark:bg-gray-500/30",
+    type: TechnologyType.Frontend,
+  },
+  {
+    name: "Vue",
+    icon: VueIcon,
+    colorClasses: "bg-gray-500 dark:bg-gray-500/30",
+    type: TechnologyType.Frontend,
+  },
+  {
+    name: "JavaScript",
+    icon: JavaScriptIcon,
+    colorClasses: "bg-gray-500 dark:bg-gray-500/30",
+    type: TechnologyType.Frontend,
+  },
+  {
+    name: "Bootstrap",
+    icon: BootstrapIcon,
+    colorClasses: "bg-gray-500 dark:bg-gray-500/30",
+    type: TechnologyType.Frontend,
+  },
+  {
+    name: "Tailwind",
+    icon: TailwindIcon,
+    colorClasses: "bg-gray-500 dark:bg-gray-500/30",
+    type: TechnologyType.Frontend,
+  },
+  {
+    name: "Docker",
+    icon: DockerIcon,
+    colorClasses: "bg-gray-500 dark:bg-gray-500/30",
+    type: TechnologyType.Frontend,
+  },
+  {
+    name: "AWS",
+    icon: AWSIcon,
+    colorClasses: "bg-gray-500 dark:bg-gray-500/30",
+    type: TechnologyType.Frontend,
+  },
+];
+---
+
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    {
+      TECHNOLOGIES.map((technology) => (
+        <div
+          class={`flex flex-col items-center justify-center p-4 transition-all duration-300 ${technology.colorClasses} hover:scale-110 rounded-lg shadow-md`}
+        >
+          <technology.icon className="size-12" />
+          <span class="mt-2 text-sm font-semibold text-white">
+            {technology.name}
+          </span>
+        </div>
+      ))
+    }
+  </div>

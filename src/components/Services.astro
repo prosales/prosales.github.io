@@ -1,0 +1,40 @@
+---
+import WebIcon from "./icons/Web.astro";
+import EcommerceIcon from "./icons/Ecommerce.astro";
+import IntegrationsIcon from "./icons/Integrations.astro";
+import AdviceIcon from "./icons/Advice.astro";
+
+const SERVICES = [
+  {
+    name: "Desarrollo Web",
+    icon: WebIcon
+  },
+  {
+    name: "Ecommerce",
+    icon: EcommerceIcon,
+  },
+  {
+    name: "Integraciones",
+    icon: IntegrationsIcon
+  },
+  {
+    name: "Asesoría Tecnológica",
+    icon: AdviceIcon
+  },
+];
+---
+
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    {
+      SERVICES.map((item) => (
+        <div
+          class={`flex flex-col items-center justify-center p-4 transition-all duration-300 hover:scale-110 rounded-lg shadow-md`}
+        >
+          <item.icon className="size-12" />
+          <span class="mt-2 text-sm font-semibold text-white">
+            {item.name}
+          </span>
+        </div>
+      ))
+    }
+  </div>
